@@ -1,0 +1,26 @@
+.input-group-text {
+  background-color: #f1f1f1;
+  border-right: 0;
+  font-size: 20px;
+}
+
+.input-group .form-control {
+  border-left: 0;
+}
+
+.input-group .form-control:focus{
+  box-shadow: none;
+  background-color: #ced4da;
+  outline: none;
+}
+
+.trainer-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.trainer-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  background-color: #f9f9f9;
+}

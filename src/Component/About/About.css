@@ -1,0 +1,28 @@
+.about-page {
+  font-family: "Segoe UI", sans-serif;
+}
+
+.trainer-card-img {
+  height: 220px;
+  object-fit: cover;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 0.95rem;
+}
+
+.about-page h1,
+.about-page h3,
+.about-page h4 {
+  font-weight: 700;
+}
+
+.about-page p {
+  font-size: 1rem;
+  line-height: 1.6;
+}

@@ -1,0 +1,30 @@
+.custom-footer {
+  background-color: #7c0a02; /* deep red */
+  color: #f8f9fa; /* light gray */
+  padding: 2rem 0;
+}
+
+.custom-footer h5 {
+  color: #ffc9c9; /* light pink-red */
+  margin-bottom: 1rem;
+}
+
+.custom-footer p,
+.custom-footer small {
+  color: #e0e0e0;
+}
+
+.custom-footer a {
+  color: #ffb3b3;
+  text-decoration: none;
+}
+
+.custom-footer a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.custom-footer hr {
+  border-top: 1px solid #bbbbbb;
+  margin-top: 1.5rem;
+}
