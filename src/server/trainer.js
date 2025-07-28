@@ -21,9 +21,9 @@ export const getTrainerById = async (id) => {
   return res.data;
 };
 
-export const createTrainer = async (trainerData) => {
-  const res = await apiClient.post("/trainer", trainerData);
-  return res.data;
+export const createTrainer = async (formData) => {
+  const response = await axios.post("http://127.0.0.1:8000/trainer", formData);
+  return response.data;
 };
 
 export const updateTrainer = async (id, data) => {

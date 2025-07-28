@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Col, Container, Row, Form, Button } from "react-bootstrap";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import submit from "../../assets/img/Submit.jpeg";
 import { createTrainer } from "../../server/trainer";
@@ -9,17 +8,19 @@ const Submit = () => {
   const navigate = useNavigate();
   const [resumeFile, setResumeFile] = useState(null);
 
-  // Get value from localStorage with fallback
   const getValue = (key) => localStorage.getItem(key) || "";
 
-  // File upload handler
   const handleFileChange = (e) => {
     setResumeFile(e.target.files[0]);
   };
 
-  // Form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!resumeFile) {
+      alert("Please upload your resume.");
+      return;
+    }
 
     const formData = new FormData();
     formData.append("name", getValue("trainer_name"));
@@ -38,25 +39,19 @@ const Submit = () => {
     formData.append("class_mood", getValue("trainer_class_mood"));
     formData.append("mode", getValue("trainer_mode"));
     formData.append("title", getValue("trainer_title"));
+    formData.append("resume", resumeFile); // attach resume file
 
-    if (resumeFile) {
-      formData.append("resume", resumeFile);
-    } else {
-      alert("Please upload your resume.");
-      return;
+    try {
+      const response = await createTrainer(formData);
+      alert("Trainer profile submitted successfully!");
+      localStorage.clear();
+      navigate("/trainers");
+    } catch (err) {
+      const error = err.response?.data?.detail || err.message;
+      alert("Submission failed: " + error);
+      console.error("Error uploading:", err);
     }
-
-      try {
-        const response = await createTrainer(formData);
-        alert("Trainer profile submitted successfully!");
-        localStorage.clear();
-        navigate("/trainers");
-      }catch (err) {
-            const error = err.response?.data?.detail;
-            alert("Submission failed: " + (error || "Unknown error"));
-            console.error("Error uploading:", err);
-          }
-        };
+  };
 
   const handlePrevious = () => {
     navigate("/create-profile/contact");

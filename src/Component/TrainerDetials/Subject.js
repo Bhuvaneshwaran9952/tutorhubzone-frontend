@@ -7,7 +7,7 @@ import subject from "../../assets/img/subject.webp";
 import { useNavigate } from "react-router";
 
 const allSubjects = [
-  "Full Stack", "Java Full Stack","Digital marketing", "DOT NET", "React", "Angular", "Python", "Java", "Node", "Data Science","AI"
+  "Full Stack", "Java Full Stack","Digital marketing", "DOT NET", "React", "Angular", "Python", "Java", "Node", "Data Science", "AI", "Data Analyst", "SQL", "Word", "Machine Learning"
 ];
 
 const Subject = () => {

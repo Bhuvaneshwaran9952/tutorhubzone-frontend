@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { TiHomeOutline } from "react-icons/ti";
 import { IoMdMenu } from "react-icons/io";
 import { PiChalkboardTeacher } from "react-icons/pi";
+import { IoIosContact } from "react-icons/io";
 import { SiAboutdotme } from "react-icons/si";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Navbar.css';
@@ -67,7 +68,7 @@ const CustomNavbar = () => {
             </Nav.Link>
 
             <Nav.Link as={Link} to="/contact" onClick={handleClose}>
-              <PiChalkboardTeacher className="me-2" />
+              <IoIosContact  className="me-2" />
               Contact Us
             </Nav.Link>
           </Nav>

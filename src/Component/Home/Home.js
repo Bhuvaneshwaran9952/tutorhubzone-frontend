@@ -22,6 +22,12 @@ const Home = () => {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
+  const sliderImages = [
+    "https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg",
+    "https://images.pexels.com/photos/2566581/pexels-photo-2566581.jpeg",
+    "https://images.pexels.com/photos/4145191/pexels-photo-4145191.jpeg"
+  ];
+
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
   const indexOfLastItem = currentPage * itemsPerPage;
@@ -99,22 +105,45 @@ const Home = () => {
         {[1, 2, 3].map((item, i) => (
           <Carousel.Item key={i}>
             <div className={`carousel-bg bg${item}`}>
-              <Container className="carousel-content text-white text-center">
-                <h1 className="display-5 fw-bold">
-                  {i === 0
-                    ? "Explore Skilled Tutors Across India"
-                    : i === 1
-                    ? "Learn from Industry Experts"
-                    : "Boost Your Career"}
-                </h1>
-                <p className="lead">
-                  {i === 0
-                    ? "With the aid of excellent tutors, pass tests, pick up new skills, and raise grades."
-                    : i === 1
-                    ? "Connect with trainers who have real-world experience."
-                    : "Choose tech courses and mentors to match your goals."}
-                </p>
-              </Container>
+
+            <div
+              className="text-white text-center"
+              style={{
+                backgroundImage: `url(${sliderImages[i]})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                minHeight: "600px",
+                width: "100vw", 
+                margin: "0",
+                padding: "100px 20px", 
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center"
+              }}
+            >
+              <h1 className="display-5 fw-bold text-danger">
+                {i === 0
+                  ? "Explore Skilled Tutors Across India"
+                  : i === 1
+                  ? "Learn from Industry Experts"
+                  : "Boost Your Career"}
+              </h1>
+              <p
+                className="lead"
+                style={{
+                  color: "white",
+                  textShadow: "2px 2px 5px rgba(5, 5, 5, 0.8)"
+                }}
+              >
+                {i === 0
+                  ? "With the aid of excellent tutors, pass tests, pick up new skills, and raise grades."
+                  : i === 1
+                  ? "Connect with trainers who have real-world experience."
+                  : "Choose tech courses and mentors to match your goals."}
+              </p>
+            </div>
             </div>
           </Carousel.Item>
         ))}

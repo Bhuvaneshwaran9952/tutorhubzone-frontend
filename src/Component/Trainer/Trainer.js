@@ -16,7 +16,7 @@ const Trainer = () => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const itemsPerPage = 6;
+  const itemsPerPage = 5;
   const [currentPage, setCurrentPage] = useState(1);
   const startIdx = (currentPage - 1) * itemsPerPage;
   const currentItems = filteredData.slice(startIdx, startIdx + itemsPerPage);
